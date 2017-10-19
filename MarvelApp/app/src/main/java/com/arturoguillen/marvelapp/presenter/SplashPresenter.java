@@ -57,5 +57,7 @@ public class SplashPresenter implements PresenterInterface<SplashView> {
     @Override
     public void detachView() {
         this.view = null;
+        if (showLogoDisposable != null)
+            showLogoDisposable.dispose();
     }
 }
