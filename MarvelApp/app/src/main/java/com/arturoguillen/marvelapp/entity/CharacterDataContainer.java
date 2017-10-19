@@ -9,7 +9,7 @@ import java.util.List;
  * Created by artu on 3/8/17.
  */
 
-public class ComicDataContainer implements Serializable {
+public class CharacterDataContainer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class ComicDataContainer implements Serializable {
     private int count;
 
     @SerializedName("results")
-    private List<Comic> results;
+    private List<Character> results;
 
     public int getOffset() {
         return offset;
@@ -53,11 +53,11 @@ public class ComicDataContainer implements Serializable {
         this.total = total;
     }
 
-    public List<Comic> getResults() {
+    public List<Character> getResults() {
         return results;
     }
 
-    public void setResults(List<Comic> results) {
+    public void setResults(List<Character> results) {
         this.results = results;
     }
 

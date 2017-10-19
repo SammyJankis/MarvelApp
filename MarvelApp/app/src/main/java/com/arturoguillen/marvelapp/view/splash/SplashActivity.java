@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 
 import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.di.component.FeedComponent;
-import com.arturoguillen.marvelapp.presenter.SplashPresenter;
+import com.arturoguillen.marvelapp.presenter.splash.SplashPresenter;
 import com.arturoguillen.marvelapp.view.BaseActivity;
 import com.arturoguillen.marvelapp.view.feed.FeedActivity;
 

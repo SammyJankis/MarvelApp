@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/feed_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="@dimen/padding_low"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/feed_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feed_text_message"
+        android:gravity="center"
+        android:padding="@dimen/padding_low"
+        android:text="@string/feed_screen_title"
+        android:textSize="@dimen/text_size_high" />
+
+    <EditText
+        android:id="@+id/feed_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feed_title"
+        android:hint="@string/feed_search_hint"
+        android:padding="@dimen/padding_med"
+        android:textSize="@dimen/text_size_medium" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/feed_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/feed_search" />
+
+    <ProgressBar
+        android:id="@+id/feed_progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="@dimen/progressfooter_square"
+        android:layout_height="@dimen/progressfooter_square"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padding_low"
+        android:visibility="gone" />
+
+</RelativeLayout>

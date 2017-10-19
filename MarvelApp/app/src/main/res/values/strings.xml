@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MarvelApp</string>
     <string name="my_name">Arturo Guillen Lorente</string>
+    <string name="feed_screen_title">Busca tu súper-héroe</string>
+    <string name="feed_search_hint">nombre a buscar</string>
+    <string name="try_again">Prueba de nuevo</string>
 </resources>

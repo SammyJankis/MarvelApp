@@ -1,6 +1,7 @@
-package com.arturoguillen.marvelapp.presenter;
+package com.arturoguillen.marvelapp.presenter.splash;
 
 
+import com.arturoguillen.marvelapp.presenter.PresenterInterface;
 import com.arturoguillen.marvelapp.view.splash.SplashView;
 
 import java.util.concurrent.TimeUnit;
