@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.di.component.FeedComponent;
-import com.arturoguillen.marvelapp.entity.Character;
+import com.arturoguillen.marvelapp.entity.character.Character;
 import com.arturoguillen.marvelapp.presenter.feed.FeedPresenter;
 import com.arturoguillen.marvelapp.view.BaseActivity;
 import com.arturoguillen.marvelapp.view.detail.DetailActivity;

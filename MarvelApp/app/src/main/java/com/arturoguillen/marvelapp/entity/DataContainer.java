@@ -3,16 +3,14 @@ package com.arturoguillen.marvelapp.entity;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
- * Created by artu on 3/8/17.
+ * Created by agl on 19/10/2017.
  */
 
-public class CharacterDataContainer implements Serializable {
+public class DataContainer implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
 
     @SerializedName("offset")
     private int offset;
@@ -25,9 +23,6 @@ public class CharacterDataContainer implements Serializable {
 
     @SerializedName("count")
     private int count;
-
-    @SerializedName("results")
-    private List<Character> results;
 
     public int getOffset() {
         return offset;
@@ -51,14 +46,6 @@ public class CharacterDataContainer implements Serializable {
 
     public void setTotal(int total) {
         this.total = total;
-    }
-
-    public List<Character> getResults() {
-        return results;
-    }
-
-    public void setResults(List<Character> results) {
-        this.results = results;
     }
 
     public int getCount() {

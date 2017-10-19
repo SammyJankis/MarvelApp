@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.arturoguillen.marvelapp.R;
-import com.arturoguillen.marvelapp.entity.Character;
+import com.arturoguillen.marvelapp.entity.character.Character;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

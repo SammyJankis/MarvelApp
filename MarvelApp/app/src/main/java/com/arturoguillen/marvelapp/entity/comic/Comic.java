@@ -1,22 +1,20 @@
-package com.arturoguillen.marvelapp.entity;
+package com.arturoguillen.marvelapp.entity.comic;
 
+import com.arturoguillen.marvelapp.entity.Image;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 /**
- * Created by agl on 19/10/2017.
+ * Created by artu on 3/8/17.
  */
 
-public class Character implements Serializable {
+public class Comic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @SerializedName("id")
-    private int id;
-
-    @SerializedName("name")
-    private String name;
+    @SerializedName("title")
+    private String title;
 
     @SerializedName("description")
     private String description;
@@ -24,20 +22,12 @@ public class Character implements Serializable {
     @SerializedName("thumbnail")
     private Image thumbnail;
 
-    public int getId() {
-        return id;
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -55,4 +45,5 @@ public class Character implements Serializable {
     public void setThumbnail(Image thumbnail) {
         this.thumbnail = thumbnail;
     }
+
 }

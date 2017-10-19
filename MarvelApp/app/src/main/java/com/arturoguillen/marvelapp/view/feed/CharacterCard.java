@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.arturoguillen.marvelapp.R;
-import com.arturoguillen.marvelapp.entity.Character;
+import com.arturoguillen.marvelapp.entity.character.Character;
 import com.arturoguillen.marvelapp.view.PicassoView;
 import com.squareup.picasso.Picasso;
 

@@ -1,4 +1,4 @@
-package com.arturoguillen.marvelapp.entity;
+package com.arturoguillen.marvelapp.entity.character;
 
 import com.google.gson.annotations.SerializedName;
 

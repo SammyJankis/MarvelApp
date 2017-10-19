@@ -2,7 +2,7 @@ package com.arturoguillen.marvelapp.view.feed;
 
 import android.view.View;
 
-import com.arturoguillen.marvelapp.entity.Character;
+import com.arturoguillen.marvelapp.entity.character.Character;
 
 /**
  * Created by agl on 19/10/2017.

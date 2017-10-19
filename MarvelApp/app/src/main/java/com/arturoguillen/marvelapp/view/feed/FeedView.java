@@ -2,7 +2,7 @@ package com.arturoguillen.marvelapp.view.feed;
 
 import android.support.annotation.StringRes;
 
-import com.arturoguillen.marvelapp.entity.Character;
+import com.arturoguillen.marvelapp.entity.character.Character;
 
 import java.util.List;
 

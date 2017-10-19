@@ -3,8 +3,8 @@ package com.arturoguillen.marvelapp.model;
 
 import com.arturoguillen.marvelapp.Constants;
 import com.arturoguillen.marvelapp.di.api.MarvelApi;
-import com.arturoguillen.marvelapp.entity.Character;
-import com.arturoguillen.marvelapp.entity.CharacterDataWrapper;
+import com.arturoguillen.marvelapp.entity.character.Character;
+import com.arturoguillen.marvelapp.entity.character.CharacterDataWrapper;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
