@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.widget.TextView;
 
 import com.arturoguillen.marvelapp.Constants;
@@ -139,6 +140,8 @@ public class DetailActivity extends BaseActivity implements DetailView {
 
     @Override
     public void showComicsList(List<Comic> comics) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        //transaction.replace(R.id.fragment_container, newFragment);
 
     }
 

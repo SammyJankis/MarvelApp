@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ProgressBar
+        android:id="@+id/feed_progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="@dimen/progressfooter_square"
+        android:layout_height="@dimen/progressfooter_square"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/padding_low"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/feed_text_message"
         android:layout_width="match_parent"
@@ -40,17 +52,5 @@
         android:layout_height="match_parent"
         android:layout_below="@id/feed_search"
         tools:listitem="@layout/card_feed_character" />
-
-    <ProgressBar
-        android:id="@+id/feed_progress"
-        style="?android:attr/progressBarStyleSmall"
-        android:layout_width="@dimen/progressfooter_square"
-        android:layout_height="@dimen/progressfooter_square"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/transparent"
-        android:padding="@dimen/padding_low"
-        android:visibility="gone" />
 
 </RelativeLayout>

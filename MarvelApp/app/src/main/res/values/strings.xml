@@ -3,7 +3,7 @@
     <string name="my_name">Arturo Guillen Lorente</string>
     <string name="feed_screen_title">Busca tu súper-héroe</string>
     <string name="feed_search_hint">nombre a buscar</string>
-    <string name="try_again">Prueba de nuevo</string>
+    <string name="try_again">Click aqui para probar de nuevo</string>
     <string name="detail_links">Links</string>
     <string name="button_detail">Detalle</string>
     <string name="button_wiki">Wiki</string>

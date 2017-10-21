@@ -1,9 +1,18 @@
 package com.arturoguillen.marvelapp.view.detail;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.entity.BaseResourceWrapper;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by agl on 21/10/2017.
@@ -33,14 +42,15 @@ public class DetailListFragment extends Fragment {
 
     }
 
-   /* @Override
+    /*@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_detail_list, container, false);
 
-        Context context = view.getContext();
+        ButterKnife.bind(this, view);
+
         RecyclerView recyclerView = (RecyclerView) view;
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(new ItemRecyclerViewAdapter(dummyModels, interactionListener));
         return view;
     }*/

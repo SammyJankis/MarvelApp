@@ -29,6 +29,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by agl on 19/10/2017.
@@ -54,6 +55,8 @@ public class FeedActivity extends BaseActivity implements FeedView {
     @BindView(R.id.feed_search)
     EditText editText;
 
+    private String character;
+
     @Override
     protected void injectComponent(FeedComponent component) {
         component.inject(this);
@@ -72,8 +75,10 @@ public class FeedActivity extends BaseActivity implements FeedView {
         editText.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable editable) {
-                if (editable.length() > 3)
-                    presenter.getCharacters(editable.toString());
+                if (editable.length() > 3) {
+                    character = editable.toString();
+                    presenter.getCharacters(character);
+                }
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,6 +132,13 @@ public class FeedActivity extends BaseActivity implements FeedView {
     @Override
     public void showMoreData(List<Character> characters) {
         ((FeedAdapter) recyclerView.getAdapter()).setFeedContent(characters);
+    }
+
+    @OnClick(R.id.feed_text_message)
+    public void onClick(View view) {
+        if (character.length() > 3) {
+            presenter.getCharacters(character);
+        }
     }
 
     @Override
