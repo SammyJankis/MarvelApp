@@ -22,6 +22,7 @@ import com.arturoguillen.marvelapp.view.BaseActivity;
 import com.arturoguillen.marvelapp.view.detail.DetailActivity;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -84,7 +85,7 @@ public class FeedActivity extends BaseActivity implements FeedView {
     }
 
     private void setupRecyclerView() {
-        FeedAdapter feedAdapter = new FeedAdapter(picasso, presenter);
+        FeedAdapter feedAdapter = new FeedAdapter(picasso, new ArrayList<Character>(), presenter);
         recyclerView.setAdapter(feedAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);

@@ -6,47 +6,33 @@ import android.view.ViewGroup;
 
 import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.entity.character.Character;
+import com.arturoguillen.marvelapp.view.BaseAdapter;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by artu on 3/9/17.
  */
 
-public class FeedAdapter extends RecyclerView.Adapter {
+public class FeedAdapter extends BaseAdapter {
 
-    private List<Character> feedContent;
 
-    private Picasso picasso;
     private FeedItemOnClickListener feedItemOnClickListener;
 
-    public FeedAdapter(Picasso picasso, FeedItemOnClickListener feedItemOnClickListener) {
-        this.feedContent = new ArrayList<>();
-        this.picasso = picasso;
+    public FeedAdapter(Picasso picasso, List<Character> content, FeedItemOnClickListener feedItemOnClickListener) {
+        super(picasso, content);
         this.feedItemOnClickListener = feedItemOnClickListener;
-    }
-
-    public void setFeedContent(List<Character> feedContent) {
-        this.feedContent.clear();
-        this.feedContent.addAll(feedContent);
-        notifyDataSetChanged();
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new CharacterCard(LayoutInflater.from(parent.getContext())
+        return new FeedCard(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_feed_character, parent, false), picasso, feedItemOnClickListener);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((CharacterCard) holder).fillCharacterCard(feedContent.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return feedContent.size();
+        ((FeedCard) holder).fillCharacterCard((Character) content.get(position));
     }
 }
