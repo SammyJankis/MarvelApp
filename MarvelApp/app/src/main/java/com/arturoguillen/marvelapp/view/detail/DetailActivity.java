@@ -11,10 +11,14 @@ import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.di.component.FeedComponent;
 import com.arturoguillen.marvelapp.entity.Url;
 import com.arturoguillen.marvelapp.entity.character.Character;
+import com.arturoguillen.marvelapp.entity.comic.Comic;
+import com.arturoguillen.marvelapp.entity.event.Event;
 import com.arturoguillen.marvelapp.presenter.detail.DetailPresenter;
 import com.arturoguillen.marvelapp.view.BaseActivity;
 import com.arturoguillen.marvelapp.view.PicassoView;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -131,5 +135,15 @@ public class DetailActivity extends BaseActivity implements DetailView {
     private void goToBrowser(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
+    }
+
+    @Override
+    public void showComicsList(List<Comic> comics) {
+
+    }
+
+    @Override
+    public void showEventsList(List<Event> events) {
+
     }
 }

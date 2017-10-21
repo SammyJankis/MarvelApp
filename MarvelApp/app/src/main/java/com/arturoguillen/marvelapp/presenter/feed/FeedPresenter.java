@@ -5,6 +5,7 @@ import android.view.View;
 import com.arturoguillen.marvelapp.BuildConfig;
 import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.entity.character.Character;
+import com.arturoguillen.marvelapp.model.MarvelModel;
 import com.arturoguillen.marvelapp.presenter.PresenterInterface;
 import com.arturoguillen.marvelapp.view.feed.FeedItemOnClickListener;
 import com.arturoguillen.marvelapp.view.feed.FeedView;

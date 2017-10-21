@@ -10,7 +10,7 @@ import java.util.List;
  * Created by agl on 19/10/2017.
  */
 
-class EventDataContainer extends DataContainer implements Serializable {
+public class EventDataContainer extends DataContainer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
