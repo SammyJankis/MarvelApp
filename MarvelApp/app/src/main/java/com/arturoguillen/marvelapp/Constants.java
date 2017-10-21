@@ -10,6 +10,8 @@ public class Constants {
     public static final String PRIVATE_KEY = "978985e55e35edf030a37de670b4ea650cf2e580";
     public static final String PUBLIC_KEY = "a97e89847d934d0d551f6252cb4be16f";
 
+    public static final String ASPECT_RATIO = "/portrait_incredible.";
+
     //PICASSO TAG
     public static final String FEED_TAG = "FEED_TAG";
 }

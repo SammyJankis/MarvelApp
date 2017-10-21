@@ -125,11 +125,11 @@ public class FeedActivity extends BaseActivity implements FeedView {
 
     @Override
     public void showMoreData(List<Character> characters) {
-
+        ((FeedAdapter) recyclerView.getAdapter()).setFeedContent(characters);
     }
 
     @Override
-    public void goToDetailActivity() {
-        startActivity(DetailActivity.createIntent(FeedActivity.this));
+    public void goToDetailActivity(Character character) {
+        startActivity(DetailActivity.createIntent(FeedActivity.this, character));
     }
 }

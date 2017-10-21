@@ -1,9 +1,11 @@
 package com.arturoguillen.marvelapp.entity.character;
 
 import com.arturoguillen.marvelapp.entity.Image;
+import com.arturoguillen.marvelapp.entity.Url;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by agl on 19/10/2017.
@@ -24,6 +26,9 @@ public class Character implements Serializable {
 
     @SerializedName("thumbnail")
     private Image thumbnail;
+
+    @SerializedName("urls")
+    private List<Url> urls;
 
     public int getId() {
         return id;
@@ -55,5 +60,14 @@ public class Character implements Serializable {
 
     public void setThumbnail(Image thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+
+    public List<Url> getUrls() {
+        return urls;
+    }
+
+    public void setUrls(List<Url> urls) {
+        this.urls = urls;
     }
 }

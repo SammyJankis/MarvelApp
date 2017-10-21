@@ -21,6 +21,6 @@ public interface FeedView {
 
     void showMoreData(List<Character> characters);
 
-    void goToDetailActivity();
+    void goToDetailActivity(Character character);
 
 }

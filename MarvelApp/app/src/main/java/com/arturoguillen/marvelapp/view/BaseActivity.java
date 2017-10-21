@@ -1,5 +1,7 @@
 package com.arturoguillen.marvelapp.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -21,4 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract void injectComponent(FeedComponent component);
+
+
+
 }

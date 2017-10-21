@@ -4,4 +4,11 @@
     <string name="feed_screen_title">Busca tu súper-héroe</string>
     <string name="feed_search_hint">nombre a buscar</string>
     <string name="try_again">Prueba de nuevo</string>
+    <string name="detail_links">Links</string>
+    <string name="button_detail">Detalle</string>
+    <string name="button_wiki">Wiki</string>
+    <string name="button_comics">Comics</string>
+    <string name="detail_resources">Recursos</string>
+    <string name="button_fragment_events">%s Eventos</string>
+    <string name="button_fragment_comics">%s Comics</string>
 </resources>

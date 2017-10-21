@@ -13,17 +13,6 @@
     card_view:paddingEnd="@dimen/padding_low"
     card_view:paddingStart="@dimen/padding_low">
 
-    <LinearLayout
-        android:id="@+id/layout_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.arturoguillen.marvelapp.view.PicassoView
-            android:id="@+id/feed_picasso"
-            android:layout_width="@dimen/card_width"
-            android:layout_height="@dimen/card_height" />
-
-    </LinearLayout>
+    <include layout="@layout/layout_image_text_description" />
 
 </android.support.v7.widget.CardView>

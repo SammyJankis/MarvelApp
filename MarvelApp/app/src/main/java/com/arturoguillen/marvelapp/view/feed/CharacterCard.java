@@ -3,7 +3,9 @@ package com.arturoguillen.marvelapp.view.feed;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.arturoguillen.marvelapp.Constants;
 import com.arturoguillen.marvelapp.R;
 import com.arturoguillen.marvelapp.entity.character.Character;
 import com.arturoguillen.marvelapp.view.PicassoView;
@@ -18,13 +20,18 @@ import butterknife.ButterKnife;
 
 class CharacterCard extends RecyclerView.ViewHolder {
 
-    private static final String ASPECT_RATIO = "/portrait_incredible.";
 
-    @BindView(R.id.layout_content)
-    LinearLayout layoutContent;
+    @BindView(R.id.card_feed_character_content)
+    LinearLayout content;
 
-    @BindView(R.id.feed_picasso)
-    PicassoView feedPicasso;
+    @BindView(R.id.image)
+    PicassoView image;
+
+    @BindView(R.id.name)
+    TextView name;
+
+    @BindView(R.id.description)
+    TextView description;
 
     private Picasso picasso;
     private FeedItemOnClickListener feedItemOnClickListener;
@@ -37,8 +44,10 @@ class CharacterCard extends RecyclerView.ViewHolder {
     }
 
     void fillCharacterCard(final Character character) {
-        //feedPicasso.init(picasso, comic.getThumbnail().getPath() + ASPECT_RATIO + comic.getThumbnail().getExtension());
-        layoutContent.setOnClickListener(new View.OnClickListener() {
+        image.init(picasso, character.getThumbnail().getPath() + Constants.ASPECT_RATIO + character.getThumbnail().getExtension());
+        name.setText(character.getName());
+        description.setText(character.getDescription());
+        content.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 feedItemOnClickListener.onClickFeedItem(itemView, character);
