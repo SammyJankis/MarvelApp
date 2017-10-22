@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.arturoguillen.marvelapp.Constants;
@@ -58,6 +60,12 @@ public class DetailActivity extends BaseActivity implements DetailView {
     @BindView(R.id.detail_button_fragment_comics)
     Button buttonComics;
 
+    @BindView(R.id.detail_fragment_container_events)
+    FrameLayout frameEvents;
+
+    @BindView(R.id.detail_fragment_container_comics)
+    FrameLayout frameComics;
+
     ComicsFragment comicsFragment;
     EventsFragment eventsFragment;
 
@@ -80,7 +88,8 @@ public class DetailActivity extends BaseActivity implements DetailView {
 
         comicsFragment = new ComicsFragment();
         eventsFragment = new EventsFragment();
-        setComicsFragmentVisible();
+        getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container_comics, comicsFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container_events, eventsFragment).commit();
 
         buttonComics.setText(getString(R.string.button_fragment_comics, 0));
         buttonEvents.setText(getString(R.string.button_fragment_events, 0));
@@ -177,14 +186,13 @@ public class DetailActivity extends BaseActivity implements DetailView {
 
 
     private void setComicsFragmentVisible() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.detail_fragment_container, comicsFragment).commit();
-      //  getSupportFragmentManager().beginTransaction().remove(eventsFragment).commit();
+       frameComics.setVisibility(View.VISIBLE);
+        frameEvents.setVisibility(View.GONE);
     }
 
     private void setEventsFragmentVisible() {
-       // getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container, eventsFragment).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.detail_fragment_container, eventsFragment).commit();
-       // getSupportFragmentManager().beginTransaction().remove(comicsFragment).commit();
+        frameEvents.setVisibility(View.VISIBLE);
+        frameComics.setVisibility(View.GONE);
     }
 
     public void onComicsLoaded() {

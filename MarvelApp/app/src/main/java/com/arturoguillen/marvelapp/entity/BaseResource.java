@@ -15,7 +15,7 @@ public class BaseResource implements Serializable {
     @SerializedName("id")
     private int id;
 
-    @SerializedName("name")
+    @SerializedName(value="name", alternate={"title"})
     private String name;
 
     @SerializedName("description")

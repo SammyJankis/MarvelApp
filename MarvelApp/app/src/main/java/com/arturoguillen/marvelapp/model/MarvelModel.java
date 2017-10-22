@@ -84,6 +84,7 @@ public class MarvelModel extends BaseModel {
             return observable.
                     subscribeOn(Schedulers.io()).
                     observeOn(AndroidSchedulers.mainThread()).
+                    cache().
                     subscribeWith(new DisposableObserver<ComicDataWrapper>() {
                         @Override
                         public void onNext(ComicDataWrapper comicDataWrapper) {
@@ -118,6 +119,7 @@ public class MarvelModel extends BaseModel {
             return observable.
                     subscribeOn(Schedulers.io()).
                     observeOn(AndroidSchedulers.mainThread()).
+                    cache().
                     subscribeWith(new DisposableObserver<EventDataWrapper>() {
                         @Override
                         public void onNext(EventDataWrapper eventDataWrapper) {

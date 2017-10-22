@@ -1,5 +1,7 @@
 package com.arturoguillen.marvelapp.view.detail;
 
+import android.os.Bundle;
+
 /**
  * Created by agl on 21/10/2017.
  */
@@ -7,8 +9,8 @@ package com.arturoguillen.marvelapp.view.detail;
 public class ComicsFragment extends DetailListFragment {
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         ((DetailActivity) getActivity()).onComicsLoaded();
     }
 }

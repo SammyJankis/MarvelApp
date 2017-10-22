@@ -73,8 +73,15 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/detail_fragment_container"
+        android:id="@+id/detail_fragment_container_comics"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/detail_fragment_container_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </LinearLayout>
