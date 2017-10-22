@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -54,11 +54,8 @@ public class DetailActivity extends BaseActivity implements DetailView {
     @BindView(R.id.description)
     TextView description;
 
-    @BindView(R.id.detail_button_fragment_events)
-    Button buttonEvents;
-
-    @BindView(R.id.detail_button_fragment_comics)
-    Button buttonComics;
+    @BindView(R.id.tabs)
+    TabLayout tabs;
 
     @BindView(R.id.detail_fragment_container_events)
     FrameLayout frameEvents;
@@ -91,8 +88,10 @@ public class DetailActivity extends BaseActivity implements DetailView {
         getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container_comics, comicsFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container_events, eventsFragment).commit();
 
-        buttonComics.setText(getString(R.string.button_fragment_comics, 0));
-        buttonEvents.setText(getString(R.string.button_fragment_events, 0));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.button_fragment_comics, 0)));
+        tabs.addTab(tabs.newTab().setText(getString(R.string.button_fragment_events, 0)));
+
+        setTabsListener();
     }
 
     private Character getCharacterExtra(Bundle savedInstanceState) {
@@ -162,31 +161,44 @@ public class DetailActivity extends BaseActivity implements DetailView {
         startActivity(browserIntent);
     }
 
-    @OnClick(R.id.detail_button_fragment_comics)
-    public void comicsFragmentClick() {
-        setComicsFragmentVisible();
-    }
+    public void setTabsListener() {
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    setComicsFragmentVisible();
+                } else {
+                    setEventsFragmentVisible();
+                }
+            }
 
-    @OnClick(R.id.detail_button_fragment_events)
-    public void eventsFragmentClick() {
-        setEventsFragmentVisible();
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override
     public void showComicsData(List<Comic> comics) {
-        buttonComics.setText(getString(R.string.button_fragment_comics, comics.size()));
+        tabs.getTabAt(0).setText(getString(R.string.button_fragment_comics, comics.size()));
         comicsFragment.setData(comics);
     }
 
     @Override
     public void showEventsData(List<Event> events) {
-        buttonEvents.setText(getString(R.string.button_fragment_events, events.size()));
+        tabs.getTabAt(1).setText(getString(R.string.button_fragment_events, events.size()));
         eventsFragment.setData(events);
     }
 
 
     private void setComicsFragmentVisible() {
-       frameComics.setVisibility(View.VISIBLE);
+        frameComics.setVisibility(View.VISIBLE);
         frameEvents.setVisibility(View.GONE);
     }
 
