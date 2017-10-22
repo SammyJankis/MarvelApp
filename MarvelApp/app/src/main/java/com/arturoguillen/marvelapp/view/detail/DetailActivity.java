@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.arturoguillen.marvelapp.Constants;
@@ -52,6 +52,15 @@ public class DetailActivity extends BaseActivity implements DetailView {
     @BindView(R.id.description)
     TextView description;
 
+    @BindView(R.id.detail_button_fragment_events)
+    Button buttonEvents;
+
+    @BindView(R.id.detail_button_fragment_comics)
+    Button buttonComics;
+
+    ComicsFragment comicsFragment;
+    EventsFragment eventsFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +70,6 @@ public class DetailActivity extends BaseActivity implements DetailView {
         ButterKnife.bind(this);
 
         character = getCharacterExtra(savedInstanceState);
-
         initUI(character);
     }
 
@@ -69,6 +77,13 @@ public class DetailActivity extends BaseActivity implements DetailView {
         image.init(picasso, character.getThumbnail().getPath() + Constants.ASPECT_RATIO + character.getThumbnail().getExtension());
         name.setText(character.getName());
         description.setText(character.getDescription());
+
+        comicsFragment = new ComicsFragment();
+        eventsFragment = new EventsFragment();
+        setComicsFragmentVisible();
+
+        buttonComics.setText(getString(R.string.button_fragment_comics, 0));
+        buttonEvents.setText(getString(R.string.button_fragment_events, 0));
     }
 
     private Character getCharacterExtra(Bundle savedInstanceState) {
@@ -138,15 +153,45 @@ public class DetailActivity extends BaseActivity implements DetailView {
         startActivity(browserIntent);
     }
 
-    @Override
-    public void showComicsList(List<Comic> comics) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        //transaction.replace(R.id.fragment_container, newFragment);
+    @OnClick(R.id.detail_button_fragment_comics)
+    public void comicsFragmentClick() {
+        setComicsFragmentVisible();
+    }
 
+    @OnClick(R.id.detail_button_fragment_events)
+    public void eventsFragmentClick() {
+        setEventsFragmentVisible();
     }
 
     @Override
-    public void showEventsList(List<Event> events) {
+    public void showComicsData(List<Comic> comics) {
+        buttonComics.setText(getString(R.string.button_fragment_comics, comics.size()));
+        comicsFragment.setData(comics);
+    }
 
+    @Override
+    public void showEventsData(List<Event> events) {
+        buttonEvents.setText(getString(R.string.button_fragment_events, events.size()));
+        eventsFragment.setData(events);
+    }
+
+
+    private void setComicsFragmentVisible() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.detail_fragment_container, comicsFragment).commit();
+      //  getSupportFragmentManager().beginTransaction().remove(eventsFragment).commit();
+    }
+
+    private void setEventsFragmentVisible() {
+       // getSupportFragmentManager().beginTransaction().add(R.id.detail_fragment_container, eventsFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.detail_fragment_container, eventsFragment).commit();
+       // getSupportFragmentManager().beginTransaction().remove(comicsFragment).commit();
+    }
+
+    public void onComicsLoaded() {
+        presenter.getComics(character.getId());
+    }
+
+    public void onEventsLoaded() {
+        presenter.getEvents(character.getId());
     }
 }

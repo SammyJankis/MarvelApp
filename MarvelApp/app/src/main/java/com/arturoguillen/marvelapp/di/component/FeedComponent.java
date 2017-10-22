@@ -4,6 +4,7 @@ package com.arturoguillen.marvelapp.di.component;
 import com.arturoguillen.marvelapp.di.module.ImageRequestModule;
 import com.arturoguillen.marvelapp.di.module.MarvelModule;
 import com.arturoguillen.marvelapp.view.detail.DetailActivity;
+import com.arturoguillen.marvelapp.view.detail.DetailListFragment;
 import com.arturoguillen.marvelapp.view.feed.FeedActivity;
 import com.arturoguillen.marvelapp.view.splash.SplashActivity;
 
@@ -23,4 +24,7 @@ public interface FeedComponent {
     void inject(FeedActivity feedActivity);
 
     void inject(DetailActivity detailActivity);
+
+    void inject(DetailListFragment detailListFragment);
+
 }

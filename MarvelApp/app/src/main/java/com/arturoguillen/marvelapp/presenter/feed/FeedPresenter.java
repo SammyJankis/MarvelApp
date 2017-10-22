@@ -37,7 +37,7 @@ public class FeedPresenter implements PresenterInterface<FeedView>, FeedItemOnCl
         view.showProgressFooter();
         getCharactersDisposable = marvelModel.getCharacters(name, new MarvelModel.ResponseObserver() {
             @Override
-            public void onCompleted(List<Character> characters) {
+            public void onCompleted(List characters) {
                 view.hideProgressFooter();
                 view.hideMessage();
                 view.showMoreData(characters);

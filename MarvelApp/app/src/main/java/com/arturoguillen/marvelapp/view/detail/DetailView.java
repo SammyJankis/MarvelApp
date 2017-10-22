@@ -11,8 +11,8 @@ import java.util.List;
 
 public interface DetailView {
 
-    void showComicsList(List<Comic> comics);
+    void showComicsData(List<Comic> comics);
 
-    void showEventsList(List<Event> events);
+    void showEventsData(List<Event> events);
 
 }

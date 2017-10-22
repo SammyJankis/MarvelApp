@@ -17,7 +17,7 @@ public class BaseResourceWrapper implements Serializable {
         return resources;
     }
 
-    public void setResources(List<BaseResource> resources) {
+    public void setResources(List resources) {
         this.resources = resources;
     }
 }
